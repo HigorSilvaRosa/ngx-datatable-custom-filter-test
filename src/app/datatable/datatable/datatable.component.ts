@@ -7,8 +7,6 @@ import { Component, OnInit, ViewChild, TemplateRef, Input } from '@angular/core'
 })
 export class DatatableComponent implements OnInit {
 
-  @ViewChild(TemplateRef) columnNameHeader: TemplateRef<any>;
-
   rows = [
     { name: 'Austin', gender: 'Male', company: 'Swimlane' },
     { name: 'Dany', gender: 'Male', company: 'KFC' },
@@ -18,7 +16,6 @@ export class DatatableComponent implements OnInit {
   columns = [
     { 
       name: 'Name',
-      headerTemplate: this.columnNameHeader
     },
     { name: 'Gender' },
     { name: 'Company' }
@@ -27,8 +24,6 @@ export class DatatableComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
-    console.log(this.columnNameHeader);
 
   }
 

@@ -1,6 +1,18 @@
-<ngx-datatable [rows]="rows" [columns]="columns">
-  <ng-template #columnNameHeader>
-    Meu HEADER pra coluna
-  </ng-template>
+<ngx-datatable [rows]="rows" [columns]="columns" [columnMode]="'force'">
+  <ngx-datatable-column name="Name">
+    <ng-template let-column="column" ngx-datatable-header-template let-sort="sortFn">
+      <input [placeholder]="column.name" style="max-width: 90%;"><button (click)="sort()" style="max-width: 10%;"> /\ | \/</button>
+    </ng-template>
+    <ng-template let-value="value" ngx-datatable-cell-template>
+      {{value}}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Gender">
+    <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+      <input [placeholder]="column.name" style="max-width: 90%;"><button (click)="sort()" style="max-width: 10%;"> /\ | \/</button>
+    </ng-template>
+    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+      {{ value}}
+    </ng-template>
+  </ngx-datatable-column>
 </ngx-datatable>
-
