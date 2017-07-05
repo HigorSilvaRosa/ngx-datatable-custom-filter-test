@@ -1,14 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { AppComponent } from './app.component';
+import { DatatableComponent } from './datatable/datatable/datatable.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DatatableComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgxDatatableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
